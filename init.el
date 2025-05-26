@@ -1,10 +1,28 @@
 (tool-bar-mode -1)
 (tooltip-mode -1)
+(scroll-bar-mode -1)
+
+(setq ns-auto-hide-menu-bar t)
+(set-frame-position nil 0 -24)
+(set-frame-size nil (display-pixel-width) (display-pixel-height) t)
+
+(add-to-list 'frameset-filter-alist '(ns-transparent-titlebar . t))
+
+(load-theme 'doom-miramare)
+
+(add-to-list 'default-frame-alist '(undecorated . t))
+
+(setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+
 (menu-bar-mode -1)
 (load-theme 'tango-dark)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (column-number-mode)
+(global-display-line-numbers-mode -1)
 (global-display-line-numbers-mode 1)
+
+(set-face-attribute 'default nil :height 180)
+(set-face-attribute 'default nil :font "FuraMono Nerd Font Mono")
 
 ;; Initialize package sources
 (require 'package)
@@ -68,7 +86,7 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+  :custom ((doom-modeline-height 35)))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
@@ -114,6 +132,8 @@
   :config
   (evil-mode 1))
 
+(hs-minor-mode)
+
 (use-package evil-collection
   :after evil
   :config
@@ -122,18 +142,6 @@
 (use-package general
   :after evil
   :config
-
-  (general-create-definer caaa/leader-keys
-    :keymaps '(normal visual emacs)
-    :prefix "C-a"
-    :global-prefix "C-a"
-    )
-
-  (caaa/leader-keys
-    "l"  '(evil-window-right :which-key "focus window right")
-    "j"  '(evil-window-down  :which-key "focus window down")
-    "k"  '(evil-window-up    :which-key "focus window up")
-    "h"  '(evil-window-left   :which-key "focus window left"))
   
   (general-create-definer efs/leader-keys
     :keymaps '(normal visual emacs)
