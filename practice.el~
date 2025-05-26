@@ -1,0 +1,16 @@
+
+(buffer-file-name)
+(buffer-name)
+
+(current-buffer)
+(switch-to-buffer (other-buffer))
+
+(let ((last-buffer (current-buffer)))
+	(progn
+		(split-root-window-right)
+		(other-window 1)
+		(switch-to-buffer (other-buffer))
+		(split-window-below)
+		(other-window 1)
+		))
+

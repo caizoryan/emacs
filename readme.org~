@@ -1,0 +1,50 @@
+* First Heading
+some [[https:orgmode.org][org mode link]]
+
+| name           | age | email             |
+| hello          |  98 | whatever@cool.com |
+| omama          |  22 | omama.garden      |
+| aaryan pashine |  23 | a-p.space         |
+
+- [ ] first item
+- second item
+
+** subheader
+whatever *bold* 
+
+* Second heading
+some more content
+
+** this is cooler
+i wrote some content but need a diff title
+i wrote some content but need a diff title
+i wrote some content but need a diff title
+i wrote some content but need a diff title
+i wrote some content but need a diff title
+i wrote some content but need a diff title
+
+*** TODO ok cool cool
+whatever
+
+#+begin_src emacs-lisp
+  (message "hello world")
+#+end_src
+
+*** TODO ok cool cool
+whatever
+
+** something even better
+heway weww a
+
+**** ANOTHER
+cartoon
+
+***** wwwww
+
+** subheader
+whatever
+
+** another
+whatever
+
+

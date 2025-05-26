@@ -1,0 +1,12 @@
+* Active
+** DONE Hello world
+CLOSED: [2025-05-24 Sat 03:13]
+
+** TODO Blaze it
+SCHEDULED: <2025-05-24 Sat 04:20>
+
+** TODO Something else
+SCHEDULED: <2025-05-25 Sun>
+
+** TODO another
+DEADLINE: <2025-05-27 Tue>
