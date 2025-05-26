@@ -110,17 +110,6 @@
   :config
   (marginalia-mode 1))
 
-;; The `orderless' package lets the minibuffer use an out-of-order
-;; pattern matching algorithm.  It matches space-separated words or
-;; regular expressions in any order.  In its simplest form, something
-;; like "ins pac" matches `package-menu-mark-install' as well as
-;; `package-install'.  This is a powerful tool because we no longer
-;; need to remember exactly how something is named.
-;;
-;; Note that Emacs has lots of "completion styles" (pattern matching
-;; algorithms), but let us keep things simple.
-;;
-;; Further reading: https://protesilaos.com/emacs/dotemacs#h:7cc77fd0-8f98-4fc0-80be-48a758fcb6e2
 (use-package orderless
   :ensure t
   :config
