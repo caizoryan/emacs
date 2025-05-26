@@ -3,25 +3,23 @@
 (scroll-bar-mode -1)
 
 (setq ns-auto-hide-menu-bar t)
-(set-frame-position nil 0 -24)
-(set-frame-size nil (display-pixel-width) (display-pixel-height) t)
+;; (set-frame-position nil 0 -24)
+;; (set-frame-size nil (display-pixel-width) (display-pixel-height) t)
 
 (add-to-list 'frameset-filter-alist '(ns-transparent-titlebar . t))
-
-(load-theme 'doom-miramare)
-
 (add-to-list 'default-frame-alist '(undecorated . t))
 
+(load-theme 'doom-miramare)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 
-(menu-bar-mode -1)
+(menu-bar-mode 1)
 (load-theme 'tango-dark)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (column-number-mode)
 (global-display-line-numbers-mode -1)
 (global-display-line-numbers-mode 1)
 
-(set-face-attribute 'default nil :height 180)
+(set-face-attribute 'default nil :height 150)
 (set-face-attribute 'default nil :font "FuraMono Nerd Font Mono")
 
 ;; Initialize package sources
@@ -33,7 +31,6 @@
 
 (package-initialize)
 (unless package-archive-contents (package-refresh-contents))
-
 ;; Initialize use-package on non-Linux platforms
 (unless (package-installed-p 'use-package)
    (package-install 'use-package))
@@ -45,7 +42,9 @@
 ;; so all general bindings are here lmao...
 (use-package command-log-mode
   :bind (("C-c t" . load-theme)
-		 ("C-c ." . eval-last-sexp)))
+	 ("C-c ." . eval-last-sexp)
+	 ))
+
 
 (defun proj ()
 	"Opens find-file in personal projects folder."
@@ -86,7 +85,16 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 35)))
+  :custom ((doom-modeline-height 15)
+	   (doom-modeline-icon nil)
+	   (doom-modeline-lsp-icon nil)
+	   (doom-modeline-lsp nil)
+	   (doom-modeline-project-name t)
+	   (doom-modeline-time t)
+	   (doom-modeline-buffer-encoding nil)
+	   (doom-modeline-indent-info t)
+	   )
+  )
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
